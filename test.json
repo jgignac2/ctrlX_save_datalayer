@@ -46,18 +46,19 @@
             "test_union": {
                 "dw": {
                     "type": "uint32",
-        "value": 1120403457
+                    "value": 1120403457
                 },
                 "re": {
                     "type": "float",
-        "value": 100.00000762939453
+                    "value": 100.00000762939453
                 }
             }
         },
         "PLC_PRG": {
             "count": {
                 "type": "int16",
-      "value": -22371
+                "value": 21132
+            }
         }
     }
 }
