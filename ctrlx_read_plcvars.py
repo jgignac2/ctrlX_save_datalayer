@@ -6,10 +6,10 @@ import json
 import datetime
 import httpx
 
-URL = "https://192.168.0.5"
+URL = "https://192.168.1.1"
 PATH = "plc/app/Application/sym"
-USERNAME = "jpg"
-PASSWORD = "jpg"
+USERNAME = "boschrexroth"
+PASSWORD = "boschrexroth"
 
 
 def main():
