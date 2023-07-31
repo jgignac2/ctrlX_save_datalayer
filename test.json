@@ -1,62 +1,63 @@
 {
-  "GVL": {
-    "myStruct": {
-      "Re": {
-        "type": "float",
-        "value": 99.98699951171875
-      },
-      "ar": {
-        "type": "arint16",
-        "value": [
-          -10,
-          14,
-          15,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
-      },
-      "bo": {
-        "type": "bool8",
-        "value": false
-      },
-      "co": {
-        "type": "int16",
-        "value": 40
-      }
-    },
-    "test_Bool0": {
-      "type": "bool8",
-      "value": true
-    },
-    "test_color": {
-      "type": "int16",
-      "value": 10
-    },
-    "test_real0": {
-      "type": "float",
-      "value": 20.0
-    },
-    "test_union": {
-      "dw": {
-        "type": "uint32",
+    "plc/app/Application/sym": {
+        "GVL": {
+            "myStruct": {
+                "Re": {
+                    "type": "float",
+                    "value": 99.98699951171875
+                },
+                "ar": {
+                    "type": "arint16",
+                    "value": [
+                        -10,
+                        14,
+                        15,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "bo": {
+                    "type": "bool8",
+                    "value": false
+                },
+                "co": {
+                    "type": "int16",
+                    "value": 40
+                }
+            },
+            "test_Bool0": {
+                "type": "bool8",
+                "value": true
+            },
+            "test_color": {
+                "type": "int16",
+                "value": 10
+            },
+            "test_real0": {
+                "type": "float",
+                "value": 20.0
+            },
+            "test_union": {
+                "dw": {
+                    "type": "uint32",
         "value": 1120403457
-      },
-      "re": {
-        "type": "float",
+                },
+                "re": {
+                    "type": "float",
         "value": 100.00000762939453
-      }
-    }
-  },
-  "PLC_PRG": {
-    "count": {
-      "type": "int16",
+                }
+            }
+        },
+        "PLC_PRG": {
+            "count": {
+                "type": "int16",
       "value": -22371
+        }
     }
-  }
 }

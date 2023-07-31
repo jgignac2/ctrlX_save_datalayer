@@ -19,7 +19,7 @@ def main():
     """
     with httpx.Client(verify=False) as client:
         ctrlx = CtrlX(client, URL, USERNAME, PASSWORD)
-        data = ctrlx.get_folder(PATH)
+        data = {PATH: ctrlx.get_folder(PATH)}
         json_text = json.dumps(data, indent=4, sort_keys=True)
 
         default_filename = (
