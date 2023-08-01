@@ -1,6 +1,6 @@
 """
-This program reads all datalayer nodes in the selected path and saves them 
-as a json file
+This program reads a json file and write all the data in it to the ctrlx
+datalayer
 """
 import json
 import sys
