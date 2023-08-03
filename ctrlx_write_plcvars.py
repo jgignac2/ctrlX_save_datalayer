@@ -18,7 +18,6 @@ def main():
     filename when done.
     """
     filename = sys.argv[1]
-    filename = "test.json"
 
     with open(filename, "r", encoding="utf-8") as file:
         file_data = json.load(file)
