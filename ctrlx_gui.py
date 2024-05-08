@@ -21,7 +21,7 @@ json_object = tk.StringVar()
 
 
 url = tk.Label(text="URL")
-url.grid(column=0,row=1)
+url.grid(column=0, row=1)
 path = tk.Label(text="Backup Path")
 path.grid(column=0, row=2)
 user = tk.Label(text="User")
@@ -46,9 +46,7 @@ and save it to a .json file.
 def backup():
     with httpx.Client(verify=False) as client:
         try:
-            ctrlx = CtrlX(
-                client, url_entry.get(), user_entry.get(), password_entry.get()
-            )
+            ctrlx = CtrlX(client, url_entry.get(), user_entry.get(), password_entry.get())
         except httpx.ConnectError:
             showinfo("Connection Failed", "Failed to connect to controller")
             return
@@ -78,9 +76,7 @@ def restore():
 
     with httpx.Client(verify=False) as client:
         try:
-            ctrlx = CtrlX(
-                client, url_entry.get(), user_entry.get(), password_entry.get()
-            )
+            ctrlx = CtrlX(client, url_entry.get(), user_entry.get(), password_entry.get())
         except httpx.ConnectError:
             showinfo("Connection Failed", "Failed to connect to controller")
             return
