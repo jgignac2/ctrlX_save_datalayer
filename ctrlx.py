@@ -24,16 +24,23 @@ class CtrlX:
         If it is a folder call the get_folder method to get its values.
         This method is recursive.
         """
-        folder = self.get_data(f"automation/api/v2/nodes/{url}")
-        if folder.status_code in (404, 501):
-            sub_items = self.get_data(f"automation/api/v2/nodes/{url}?type=browse")
-            item_values = {}
-            for sub_item in sub_items.json()["value"]:
-                item_value = self.get_folder(f"{url}/{sub_item}")
-                item_values[sub_item] = item_value
-            return item_values
-
-        return folder.json()
+        metadata = self.get_data(f"automation/api/v2/nodes/{url}?type=metadata")
+        if metadata.status_code == 200:
+            if metadata.json()["value"]["operations"]["read"] == True:
+                value = self.get_data(f"automation/api/v2/nodes/{url}")
+                if value.status_code == 200:
+                    if value.json()["type"] != "string" or metadata.json()["value"]["operations"]["browse"] == False:
+                        return value.json()
+            if metadata.json()["value"]["operations"]["browse"] == True:
+                sub_items = self.get_data(f"automation/api/v2/nodes/{url}?type=browse")
+                item_values = {}
+                if sub_items.status_code == 200:
+                    for sub_item in sub_items.json()["value"]:
+                        item_value = self.get_folder(f"{url}/{sub_item}")
+                        item_values[sub_item] = item_value
+                if len(item_values) > 0:
+                    return item_values
+            return {}
 
     def put_data(self, url, data):
         """Use PUT to write data to the ctrlX"""
